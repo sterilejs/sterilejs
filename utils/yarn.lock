@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@sterile/core@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@sterile/core/-/core-1.0.0.tgz#c64571a7ed6097f7401ac4d4d8049834fceb14be"
-  integrity sha512-eA1dhtGhMuyrwx8HiQ5DpkwsB9D9+5+UcRR7D9rUIpwndwk3rn4oBDzZxgXloxo+KgDZIxrglQ1hq3VRlqIwWw==
+"@sterile/core@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@sterile/core/-/core-1.1.1.tgz#068753ecd35bef3472c20e11d9d761da43d46fa2"
+  integrity sha512-t+LkhBj0z2JbdB7uTsRw0Qxt6aFjVLXymc38Dq0pIvUFq/arRQ9NheuRqNGCxCxfWHxaYPVmUGlZAlJJZnn+RA==

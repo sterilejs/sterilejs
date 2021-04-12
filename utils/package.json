@@ -11,6 +11,6 @@
     "author": "im-lonely <cursors.dev@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "@sterile/core": "^1.0.0"
+        "@sterile/core": "^1.1.1"
     }
 }

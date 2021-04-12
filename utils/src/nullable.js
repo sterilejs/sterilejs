@@ -1,4 +1,8 @@
-const { constrain } = require("@sterile/core");
+const { constrain, useInterceptor } = require("@sterile/core");
+
+useInterceptor((value, metadata) => {
+    if (value.constructor === Nullable) return value.v;
+});
 
 class Nullable extends Object {
     constructor(v) {
