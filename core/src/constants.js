@@ -1,3 +1,4 @@
 const isUsingMeta = Symbol("isUsingMeta");
+const interceptors = [];
 
-module.exports = { isUsingMeta };
+module.exports = { isUsingMeta, interceptors };

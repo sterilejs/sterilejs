@@ -1,4 +1,4 @@
-const { isUsingMeta } = require("../constants");
+const { isUsingMeta, interceptors } = require("../constants");
 
 function useMeta(object) {
     if (typeof object !== "object" || !object) throw new Error(`Meta hook useMeta requires an object to use.`);
@@ -15,17 +15,24 @@ function useMeta(object) {
 
             const v = Object(value);
 
-            Object.defineProperty(v, isUsingMeta, {
-                configurable: false,
-                enumerable: false,
-                writable: false,
-                value: {
-                    type,
-                    constraints,
-                    proxy,
-                    prop,
-                },
-            });
+            if (!v[isUsingMeta])
+                Object.defineProperty(v, isUsingMeta, {
+                    configurable: false,
+                    enumerable: false,
+                    writable: false,
+                    value: {
+                        type,
+                        constraints,
+                        proxy,
+                        prop,
+                    },
+                });
+
+            for (const interceptor of interceptors) {
+                const val = interceptor(v, v[isUsingMeta]);
+
+                if (typeof val !== "undefined") return val;
+            }
 
             return v;
         },

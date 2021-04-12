@@ -3,6 +3,8 @@ const { inspect } = require("util");
 const { isUsingMeta } = require("../constants");
 
 function useModify(v, n) {
+    if (typeof v === "undefined") throw new Error(`Meta hook useModify requires a value to modify.`);
+
     if (!v[isUsingMeta]) throw new Error(`Meta hook useModify requires the value to be tracked by useMeta.`);
 
     if (!v[isUsingMeta].type) throw new Error(`Assertion failed; value tracked by useMeta does not have its type.`);
